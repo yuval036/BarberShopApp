@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.barbershopapp.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.barbershopapp.RegisterFragment"
+        android:label="Register">
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.barbershopapp.HomeFragment"
+        android:label="Home">
+        <action
+            android:id="@+id/action_home_to_appointments"
+            app:destination="@id/appointmentsFragment" />
+        <action
+            android:id="@+id/action_home_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/appointmentsFragment"
+        android:name="com.example.barbershopapp.AppointmentsFragment"
+        android:label="Appointments">
+        <action
+            android:id="@+id/action_appointments_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+
+</navigation>
