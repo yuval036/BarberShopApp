@@ -33,38 +33,42 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        etUsername= view.findViewById(R.id.etUsername);
-        etPassword= view.findViewById(R.id.etPassword);
-        btnLogin= view.findViewById(R.id.btnLogin);
-        btnToRegister= view.findViewById(R.id.btnToRegister);
+        etUsername = view.findViewById(R.id.etUsername);
+        etPassword = view.findViewById(R.id.etPassword);
+        btnLogin = view.findViewById(R.id.btnLogin);
+        btnToRegister = view.findViewById(R.id.btnToRegister);
 
-        loginAuth= FirebaseAuth.getInstance();
+        loginAuth = FirebaseAuth.getInstance();
 
-        btnLogin.setOnClickListener(v->{
-            String username= etUsername.getText().toString().trim();
-            String password= etPassword.getText().toString().trim();
+        btnLogin.setOnClickListener(v -> {
+            String username = etUsername.getText().toString().trim();
+            String password = etPassword.getText().toString().trim();
 
-            if(TextUtils.isEmpty(username)||TextUtils.isEmpty(password)){
+            if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
                 Toast.makeText(getActivity(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            String fakeEmail= username+"@example.com";
-
-            loginAuth.signInWithEmailAndPassword(fakeEmail, password)
-                    .addOnCompleteListener(task -> {
-                if (task.isSuccessful()){
-                    Toast.makeText(getActivity(), "Login successful", Toast.LENGTH_SHORT).show();
-                    NavHostFragment.findNavController(LoginFragment.this)
-                            .navigate(R.id.action_login_to_home);
-                } else {
-                    Toast.makeText(getActivity(), "Login faild: "+ task
-                            .getException().getMessage(), Toast.LENGTH_LONG).show();
-                }
-            });
+            if (username.equals("admin") && password.equals("admin123")) {
+                Toast.makeText(getContext(), "Welcome, admin!", Toast.LENGTH_SHORT).show();
+                NavHostFragment.findNavController(LoginFragment.this)
+                        .navigate(R.id.action_login_to_adminDashboard);
+            } else {
+                String fakeEmail = username + "@example.com";
+                loginAuth.signInWithEmailAndPassword(fakeEmail, password)
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                NavHostFragment.findNavController(this)
+                                        .navigate(R.id.action_login_to_home);
+                            } else {
+                                Toast.makeText(getContext(), "Login failed: " +
+                                        task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
         });
 
-        btnToRegister.setOnClickListener(v->{
+        btnToRegister.setOnClickListener(v -> {
             NavHostFragment.findNavController(LoginFragment.this)
                     .navigate(R.id.action_login_to_register);
         });

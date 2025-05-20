@@ -9,7 +9,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -115,30 +115,91 @@ public class AppointmentManager {
     }
 
     public static void getAvailableHours(String date, AvailableHoursCallback callback) {
-        List<String> allHours = Arrays.asList("9:00", "10:00", "11:00", "12:00",
-                "13:00", "14:00", "15:00", "16:00");
+        String[] parts = date.split("/");
+        if (parts.length != 3) {
+            callback.onResult(Collections.emptyList());
+            return;
+        }
 
-        DatabaseReference ref = FirebaseDatabase.getInstance()
-                .getReference("appointments")
-                .child(date);
+        String day = parts[0];
+        String month = parts[1];
+        String year = parts[2];
 
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Integer.parseInt(year), Integer.parseInt(month) - 1, Integer.parseInt(day));
+        String dayName = getDayName(calendar.get(Calendar.DAY_OF_WEEK)); // למשל: "monday"
+
+        DatabaseReference scheduleRef = FirebaseDatabase.getInstance()
+                .getReference("scheduleSettings")
+                .child(dayName);
+
+        scheduleRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                List<String> available = new ArrayList<>(allHours);
+                Boolean isOpen = snapshot.child("isOpen").getValue(Boolean.class);
 
-                for (DataSnapshot child : snapshot.getChildren()) {
-                    String takenHour = child.getKey();
-                    available.remove(takenHour);
+                if (isOpen == null || !isOpen) {
+                    callback.onResult(Collections.emptyList()); // יום סגור
+                    return;
                 }
 
-                callback.onResult(available);
+                String openHourStr = snapshot.child("openHour").getValue(String.class);
+                String closeHourStr = snapshot.child("closeHour").getValue(String.class);
+
+                if (openHourStr == null || closeHourStr == null) {
+                    callback.onResult(Collections.emptyList());
+                    return;
+                }
+
+                int openHour = Integer.parseInt(openHourStr.split(":")[0]);
+                int closeHour = Integer.parseInt(closeHourStr.split(":")[0]);
+
+                List<String> allHours = new ArrayList<>();
+                for (int hour = openHour; hour < closeHour; hour++) {
+                    allHours.add(String.format("%02d:00", hour));
+                }
+
+                DatabaseReference appointmentsRef = FirebaseDatabase.getInstance()
+                        .getReference("appointments")
+                        .child(day)
+                        .child(month)
+                        .child(year);
+
+                appointmentsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+                        List<String> available = new ArrayList<>(allHours);
+                        for (DataSnapshot child : snapshot.getChildren()) {
+                            String takenHour = child.getKey();
+                            available.remove(takenHour);
+                        }
+                        callback.onResult(available);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                        callback.onResult(allHours);
+                    }
+                });
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
-                callback.onResult(allHours);
+                callback.onResult(Collections.emptyList());
             }
         });
+    }
+
+    private static String getDayName(int dayOfWeek) {
+        switch (dayOfWeek) {
+            case Calendar.SUNDAY: return "sunday";
+            case Calendar.MONDAY: return "monday";
+            case Calendar.TUESDAY: return "tuesday";
+            case Calendar.WEDNESDAY: return "wednesday";
+            case Calendar.THURSDAY: return "thursday";
+            case Calendar.FRIDAY: return "friday";
+            case Calendar.SATURDAY: return "saturday";
+        }
+        return "";
     }
 }

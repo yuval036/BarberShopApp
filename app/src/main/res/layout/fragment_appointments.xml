@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/appointmentsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="24dp"
+    android:background="#FAFAFA"
     android:gravity="center_horizontal">
 
     <TextView
@@ -13,33 +14,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Appointments"
-        android:textSize="30dp"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
+        android:textColor="#333333"
+        android:layout_marginBottom="16dp" />
 
     <ListView
         android:id="@+id/lvAppointments"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:divider="@android:color/darker_gray"
+        android:divider="#CCCCCC"
         android:dividerHeight="1dp"
-        android:layout_marginBottom="16dp"/>
+        android:background="#FFFFFF"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp" />
 
     <LinearLayout
         android:id="@+id/navButtonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="8dp">
+        android:gravity="center">
 
         <Button
             android:id="@+id/btnHome"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Home"/>
+            android:text="Back to Home"
+            android:textAllCaps="false"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 
 </LinearLayout>

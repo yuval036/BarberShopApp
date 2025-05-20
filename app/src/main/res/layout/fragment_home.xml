@@ -4,66 +4,76 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:background="#FAFAFA">
 
+    <!-- כותרת -->
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to the appointment calendar"
-        android:textSize="20dp"
-        android:layout_marginBottom="16dp"
-        android:textStyle="bold" />
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="16dp"/>
 
+    <!-- לוח שנה -->
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
 
+    <!-- כותרת שעות -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Available hours:"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="4dp"/>
+        android:textSize="16sp"
+        android:textColor="#444444"
+        android:layout_marginBottom="8dp" />
 
+    <!-- רשימת שעות זמינות -->
     <ListView
         android:id="@+id/lvAvailableHours"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:dividerHeight="1dp" />
+        android:background="#FFFFFF"
+        android:divider="#DDDDDD"
+        android:dividerHeight="1dp"
+        android:padding="8dp" />
 
+    <!-- כפתורי ניווט -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="16dp">
 
         <Button
             android:id="@+id/btnAppointments"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:layout_margin="8dp"
-            android:text="My appointments"/>
+            android:layout_weight="1"
+            android:text="My Appointments"
+            android:textAllCaps="false"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="8dp" />
 
         <Button
             android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:layout_margin="8dp"
-            android:text="Log out"/>
+            android:layout_weight="1"
+            android:text="Log Out"
+            android:textAllCaps="false"
+            android:backgroundTint="#F44336"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="8dp" />
     </LinearLayout>
-
-
-
 </LinearLayout>
