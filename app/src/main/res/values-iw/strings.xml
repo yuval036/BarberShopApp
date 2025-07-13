@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BarberShopApp</string>
+    <string name="hello_blank_fragment">Hello</string>
+    <string name="cancel">ביטול</string>
+    <string name="barbershop_admin_panel">פורטל ניהול</string>
+    <string name="manage_settings">נהל הגדרות</string>
+    <string name="already_have_an_account_log_in">יש לך חשבון? התחברות</string>
+    <string name="today_s_appointments">תורים להיום</string>
+    <string name="logout">התנתק</string>
+    <string name="set_business_hours">הגדרת שעות פעילות</string>
+    <string name="start_hour">שעת התחלה</string>
+    <string name="end_hour">שעת סיום</string>
+    <string name="select_days_off">בחירת ימי חופשה</string>
+    <string name="sunday">יום ראשון</string>
+    <string name="monday">יום שני</string>
+    <string name="tuesday">יום שלישי</string>
+    <string name="wednesday">יום רביעי</string>
+    <string name="thursday">יום חמישי</string>
+    <string name="friday">יום שישי</string>
+    <string name="saturday">יום שבת</string>
+    <string name="save_settings">שמור הגדרות</string>
+    <string name="my_appointments">התורים שלי</string>
+    <string name="back_to_home">חזרה למסך הבית</string>
+    <string name="welcome_to_the_barbershop">ברוכים הבאים למספרה</string>
+    <string name="username">שם משתמש</string>
+    <string name="password">סיסמה</string>
+    <string name="log_in">התחבר</string>
+    <string name="sign_up">הרשמה</string>
+    <string name="create_your_account">צור חשבון חדש</string>
+    <string name="welcome_to_the_appointment_calendar">ברוכים הבאים למערכת קביעת התורים</string>
+    <string name="available_hours">בחר שעה פנויה</string>
+    <string name="confirm_password">אימות סיסמה</string>
+    <string name="create_account">יצירת חשבון חדש</string>
+    <string name="male">גבר</string>
+    <string name="female">אישה</string>
+    <string name="not_specified">אחר</string>
+    <string name="select_gender">בחר/י מגדר</string>
+    <string name="pick_date">בחר תאריך</string>
+    <string name="Appointments">תורים ל</string>
+    <string name="User_not_found">המשתמש לא קיים</string>
+    <string name="No_available_appointments">אין תורים עבור התאריך הנבחר</string>
+    <string name="Error_loading_appointments">שגיאה בטעינת התורים</string>
+</resources>

@@ -11,7 +11,7 @@
         android:gravity="center_horizontal">
 
         <TextView
-            android:text="Set Business Hours"
+            android:text="@string/set_business_hours"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#333333"
@@ -21,7 +21,7 @@
 
         <EditText
             android:id="@+id/etStartHour"
-            android:hint="Start Hour "
+            android:hint="@string/start_hour"
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
 
         <EditText
             android:id="@+id/etEndHour"
-            android:hint="End Hour "
+            android:hint="@string/end_hour"
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             android:layout_marginBottom="24dp" />
 
         <TextView
-            android:text="Select Days Off"
+            android:text="@string/select_days_off"
             android:textSize="18sp"
             android:textColor="#444444"
             android:textStyle="bold"
@@ -57,36 +57,36 @@
             <CheckBox android:id="@+id/cbSunday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sunday"/>
+                android:text="@string/sunday"/>
             <CheckBox android:id="@+id/cbMonday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Monday"/>
+                android:text="@string/monday"/>
             <CheckBox android:id="@+id/cbTuesday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tuesday"/>
+                android:text="@string/tuesday"/>
             <CheckBox android:id="@+id/cbWednesday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wednesday"/>
+                android:text="@string/wednesday"/>
             <CheckBox android:id="@+id/cbThursday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Thursday"/>
+                android:text="@string/thursday"/>
             <CheckBox android:id="@+id/cbFriday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Friday"/>
+                android:text="@string/friday"/>
             <CheckBox android:id="@+id/cbSaturday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Saturday"/>
+                android:text="@string/saturday"/>
         </LinearLayout>
 
         <Button
             android:id="@+id/btnSaveSettings"
-            android:text="Save Settings"
+            android:text="@string/save_settings"
             android:textAllCaps="false"
             android:backgroundTint="#4CAF50"
             android:textColor="#FFFFFF"
@@ -96,7 +96,7 @@
 
         <Button
             android:id="@+id/btnLogoutAdmin"
-            android:text="Logout"
+            android:text="@string/logout"
             android:textAllCaps="false"
             android:backgroundTint="#F44336"
             android:textColor="#FFFFFF"

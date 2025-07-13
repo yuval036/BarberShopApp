@@ -5,58 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center_horizontal"
-    android:background="#FAFAFA">
-
-    <TextView
-        android:id="@+id/tvAdminTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Barbershop Admin Panel"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#333333"
-        android:layout_marginBottom="16dp" />
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
     <TextView
         android:id="@+id/tvTodayAppointmentsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Today's Appointments"
-        android:textSize="18sp"
+        android:text="@string/today_s_appointments"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#444444"
-        android:layout_marginBottom="8dp" />
+        android:textColor="#212121"
+        android:layout_marginBottom="8dp"/>
 
-    <!-- רשימת תורים -->
+    <Button
+        android:id="@+id/btnPickDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_date"
+        android:backgroundTint="#0288D1"
+        android:textColor="#FFFFFF"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp"/>
+
     <ListView
         android:id="@+id/lvTodayAppointments"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:divider="#CCCCCC"
-        android:dividerHeight="1dp"
-        android:background="#FFFFFF"
-        android:padding="8dp"
-        android:layout_marginBottom="16dp" />
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:clipToPadding="false"/>
 
     <Button
         android:id="@+id/btnManageSettings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Manage Settings"
-        android:textAllCaps="false"
-        android:backgroundTint="#2196F3"
+        android:text="@string/manage_settings"
+        android:backgroundTint="#00796B"
         android:textColor="#FFFFFF"
-        android:layout_marginBottom="12dp" />
+        android:padding="12dp"
+        android:layout_marginTop="16dp"/>
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logout"
-        android:textAllCaps="false"
-        android:backgroundTint="#F44336"
-        android:textColor="#FFFFFF" />
+        android:text="@string/logout"
+        android:backgroundTint="#D32F2F"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"/>
 </LinearLayout>
