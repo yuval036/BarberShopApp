@@ -1,5 +1,43 @@
 <resources>
     <string name="app_name">BarberShopApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cancel">Cancel</string>
+    <string name="barbershop_admin_panel">Barbershop Admin Panel</string>
+    <string name="manage_settings">Manage Settings</string>
+    <string name="logout">Logout</string>
+    <string name="set_business_hours">Set Business Hours</string>
+    <string name="start_hour">Start Hour</string>
+    <string name="end_hour">End Hour</string>
+    <string name="select_days_off">Select Days Off</string>
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="save_settings">Save Settings</string>
+    <string name="my_appointments">My Appointments</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="welcome_to_the_appointment_calendar">Welcome to the appointment calendar</string>
+    <string name="available_hours">Available hours:</string>
+    <string name="welcome_to_the_barbershop">Welcome to the barbershop</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="create_your_account">Create Your Account</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_an_account_log_in">Already have an account? Log in</string>
+    <string name="today_s_appointments">Today\'s Appointments</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="not_specified">Other</string>
+    <string name="select_gender">select_gender</string>
+    <string name="pick_date">pick_date</string>
+    <string name="Appointments">Appointments for</string>
+    <string name="User_not_found">User not found</string>
+    <string name="No_available_appointments">No available appointments for this date</string>
+    <string name="Error_loading_appointments">Error loading appointments</string>
 </resources>

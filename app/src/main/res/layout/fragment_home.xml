@@ -7,35 +7,31 @@
     android:padding="24dp"
     android:background="#FAFAFA">
 
-    <!-- כותרת -->
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to the appointment calendar"
+        android:text="@string/welcome_to_the_appointment_calendar"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#333333"
         android:layout_marginBottom="16dp"/>
 
-    <!-- לוח שנה -->
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp" />
 
-    <!-- כותרת שעות -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Available hours:"
+        android:text="@string/available_hours"
         android:textStyle="bold"
         android:textSize="16sp"
         android:textColor="#444444"
         android:layout_marginBottom="8dp" />
 
-    <!-- רשימת שעות זמינות -->
     <ListView
         android:id="@+id/lvAvailableHours"
         android:layout_width="match_parent"
@@ -46,7 +42,6 @@
         android:dividerHeight="1dp"
         android:padding="8dp" />
 
-    <!-- כפתורי ניווט -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -59,7 +54,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="My Appointments"
+            android:text="@string/my_appointments"
             android:textAllCaps="false"
             android:backgroundTint="#2196F3"
             android:textColor="#FFFFFF"
@@ -70,7 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Log Out"
+            android:text="@string/logout"
             android:textAllCaps="false"
             android:backgroundTint="#F44336"
             android:textColor="#FFFFFF"

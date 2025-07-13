@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textColor="#333333"
-        android:text="Welcome to the barbershop"
+        android:text="@string/welcome_to_the_barbershop"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center" />
@@ -34,7 +34,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="Username:"
+        android:hint="@string/username"
         android:inputType="text"
         android:textColorHighlight="#CEBEBE"
         android:layout_marginStart="32dp"
@@ -47,7 +47,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:inputType="text|textPassword"
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="#4CAF50"
-        android:text="Log in" />
+        android:text="@string/log_in" />
 
     <Button
         android:id="@+id/btnToRegister"
@@ -69,9 +69,6 @@
         android:layout_marginTop="16dp"
         android:background="@android:color/transparent"
         android:textColor="@color/black"
-        android:text="Sign up" />
-
-    <!-- TODO: Update blank fragment layout -->
-
+        android:text="@string/sign_up" />
 
 </LinearLayout>
